@@ -39,11 +39,11 @@ app.get('/garagem/:id', async (req, res) => {
 app.post('/garagem', async (req, res) => {
     try {
         const carro = req.body.carro;
-        const todosOsCarros = await manipularDB({}, mongo.getItemGaragem);
+        const todosOsCarros = await manipularDB({}, mongo.getItensGaragem);
         let valido = true;
 
         for (let a of todosOsCarros) {
-            if (a.nome == carro.nome) {
+            if (a.modelo == carro.modelo) {
                 valido = false;
             }
         }
@@ -57,7 +57,7 @@ app.post('/garagem', async (req, res) => {
                 res.status(201).json(carroAdicionado);
             }
         } else {
-            res.status(409).json(`O nome ${carro.nome} já está registrado no banco de dados!`);
+            res.status(409).json(`O modelo ${carro.modelo} já está registrado no banco de dados!`);
         }
     } catch (e) {
         console.error(e);
