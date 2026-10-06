@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.get('/garagem', async (req, res) => {
     try {
-        const carros = await manipularDB({}, mongo.getItemGaragem);
+        const carros = await manipularDB({}, mongo.getItensGaragem);
 
         if (!carros[0]){
             res.status(404).json('Nenhum carro encontrado no banco de dados!');
@@ -24,7 +24,7 @@ app.get('/garagem/:id', async (req, res) => {
     const id = req.params.id;
 
     try {
-        const carro = await manipularDB({ id }, mongo.getItensGaragem);
+        const carro = await manipularDB({ id }, mongo.getItemGaragem);
         
         if (carro == null) {
             res.status(404).json('Carro não encontrado no banco de dados!');
@@ -83,7 +83,7 @@ app.put('/garagem/:id', async (req, res) => {
     try {
         const id = req.params.id;
         const carro = req.body.carro;
-        const carroExistente = await manipularDB({ id }, mongo.getItensGaragem)
+        const carroExistente = await manipularDB({ id }, mongo.getItemGaragem)
 
         if (carroExistente == null) {
             res.status(404).json('Carro não encontrado no banco de dados!');
@@ -107,6 +107,6 @@ app.put('/garagem/:id', async (req, res) => {
     }
 });
 
-app.listen(3007, async () => {
-    console.log(`Servidor rodando em http://localhost:3007`);
+app.listen(3000, async () => {
+    console.log(`Servidor rodando em http://localhost:3000`);
 });

@@ -17,7 +17,7 @@ export const manipularDB = async (carro, callback) => {
         con.close();
     } catch (e) {
         resultado = null;
-        console.error(e.message);
+        console.error(e);
     } finally {
         return resultado;
     }
