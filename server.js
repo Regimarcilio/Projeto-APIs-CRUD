@@ -1,6 +1,6 @@
 import express from 'express';
-import { manipularDB } from './db.js';
-import mongo from './mongodb.js';
+import { manipularDB } from './db/db.js';
+import mongo from './db/garagedb.js';
 
 const app = express();
 app.use(express.json());
