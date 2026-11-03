@@ -3,7 +3,7 @@ import * as dbUsuarios from "../db/usuarios.js";
 import { manipularDB } from "../db/db.js";
 import 'dotenv/config';
 
-export const getItensGaragem  = async (req, res) => {
+export const getUsuarios = async (req, res) => {
     try {
         const usuarios = await manipularDB({}, dbUsuarios.getUsuarios);
 
@@ -18,8 +18,7 @@ export const getItensGaragem  = async (req, res) => {
     } 
 };
 
-export const getItem
-Garagem  = async (req, res) => {
+export const getUsuario = async (req, res) => {
     const id = req.params.id;
 
     try {

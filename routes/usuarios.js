@@ -1,11 +1,12 @@
 import express from "express";
 import { 
-    getItensGaragem,
-    getItemGaragem,
-    createItemGaragem,
-    deleteItemGaragem,
-    attItemGaragem
-} from "../controller/garagem.js";          
+    getUsuarios,
+    getUsuario,
+    createUsuario,
+    deleteUsuario,
+    attUsuario,
+    desativarUsuario,
+    ativarUsuario
 } from "../controller/usuarios.js";
 import { autorizarAdmin, verificarId } from "../middlewares/auth.js";
 

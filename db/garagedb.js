@@ -7,7 +7,6 @@ export const getItemGaragem = async (con, carro) => await con.db("projeto_4info3
 export const createItemGaragem = async (con, carro) => {
     await con.db("projeto_4info3").collection("carros").insertOne(carro);
 
-    // throw new Error("tentando errar");
     return `Carro ${carro.marca} adicionado ao MongoDB!`;
 }
 
@@ -20,6 +19,3 @@ export const attItemGaragem = async (con, carro) => {
 
     return `Carro ${carro.marca} atualizado no MongoDB!`;
 }
-
-export const mongo = { getItemGaragem, getItensGaragem, createItemGaragem, deleteItemGaragem, attItemGaragem };
-export default mongo;
