@@ -14,7 +14,7 @@ export const manipularDB = async (carro, callback) => {
     try {
         const con = await conexao();
         resultado = await callback(con, carro);
-        con.close();
+        await con.close();
     } catch (e) {
         resultado = null;
         console.error(e);

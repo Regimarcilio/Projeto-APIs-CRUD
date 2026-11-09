@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 
-export const getUsuarios = async (con) => await con.db("4INFO3").collection("Usuarios").find({}).toArray();
-export const getUsuario = async (con, usuario) => await con.db("4INFO3").collection("Usuarios").findOne({_id: new ObjectId(usuario.id)});
+export const getUsuarios = async (con) => await con.db("projeto_4info3").collection("Usuarios").find({}).toArray();
+export const getUsuario = async (con, usuario) => await con.db("projeto_4info3").collection("Usuarios").findOne({_id: new ObjectId(usuario.id)});
 
 export const getUsuarioEmail = async (con, user) => await con
     .db("projeto_4info3")
