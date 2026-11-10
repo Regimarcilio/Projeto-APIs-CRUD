@@ -34,6 +34,7 @@ export const loginUsuario = async (req, res) => {
     
         res.status(200).json({ token, mensagem: "Login efetuado com sucesso!"})
     } catch (e) {
+        console.log(e)
         res.status(500).json("Erro interno! Tente novamente em alguns instantes!")
     }
 }

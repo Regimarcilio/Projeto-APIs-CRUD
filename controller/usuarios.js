@@ -86,7 +86,7 @@ export const attUsuario = async (req, res) => {
 };
 
 export const createUsuario = async (req, res) => {
-    const { email, senha, admin } = req.body.usuario;
+    const { email, senha, usuario, admin } = req.body.usuario;
 
     try {
         const usuarioExiste = await manipularDB({ email }, dbUsuarios.getUsuarioEmail)
@@ -99,7 +99,7 @@ export const createUsuario = async (req, res) => {
         const senhaCrypt = await bcrypt.hash(senha, salt)
 
         const resultado = await manipularDB(
-            {email, senha: senhaCrypt, admin, ativo: true}, dbUsuarios.createUsuario
+            {usuario, email, senha: senhaCrypt, admin, ativo: true}, dbUsuarios.createUsuario
         );
 
         res.status(201).json(resultado)
